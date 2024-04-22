@@ -2,16 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 // import { useState, useEffect } from "react";
 import fetchBreeds from "./fetchBreedList";
 
-
 // const localCache = {};
 
 export default function useBreedList(animal) {
   // const [breedList, setBreedList] = useState([])
   // const [status, setStatus] = useState("Unloaded");
 
-  const results = useQuery(["breeds",animal], fetchBreeds)
+  const results = useQuery(["breeds", animal], fetchBreeds);
 
-  return [results?.data?.breeds ?? [],results.status]
+  return [results?.data?.breeds ?? [], results.status];
 
   // useEffect(() => {
 
@@ -37,7 +36,5 @@ export default function useBreedList(animal) {
 
   // }, [animal]);
 
-
   // return [breedList, status];
 }
-
